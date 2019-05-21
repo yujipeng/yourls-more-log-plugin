@@ -32,3 +32,4 @@ $more_log_info_column_list = [
     'csr_id'   => ' ADD `csr_id` varchar(255) not null default "" comment "记录唯一用户标识" ',
 ];
 ```
+以上是增加的字段配置，如果是使用统计功能，需要修改插件内容
