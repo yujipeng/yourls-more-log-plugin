@@ -33,3 +33,17 @@ $more_log_info_column_list = [
 ];
 ```
 以上是增加的字段配置，如果是使用统计功能，需要修改插件内容
+
+api 增加统计相关接口功能   
+```
+action = statistic ; 必传
+type = shorturl ; 必选 统计类型 可选值  shorturl , tag , cid
+date = 2019-01-01 ; 非必选 ，统计日期，格式 Y-m-d
+tag = xxxx ; 非必选，查询条件之一
+cid = xxxx ; 非必选，查询条件之一
+rows = 10 ; 非必选，默认为10
+distinct = 0 ; 非必选，默认为0 可选值 0 / 1 是否按照用户排重
+format = json ; 非必选，可选项 jsonp json xml simple
+```
+
+

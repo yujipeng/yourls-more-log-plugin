@@ -166,7 +166,7 @@ function more_log_info_statistic_cid_specific_day() {
 }
 
 function more_log_info_statistic_where(){
-    $distinct = (int)$_REQUEST['rows'] ? true : false;
+    $distinct = (int)$_REQUEST['distinct'] ? true : false;
     if($distinct) {
         $count_column = ' COUNT(DISTINCT(csr_id)) AS clicks ';
     } else {
