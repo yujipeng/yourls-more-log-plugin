@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Your Plugin Name
+Plugin Name: more-log-info
 Plugin URI: http://github.com/your_name/your_plugin
 Description: One line description of your plugin
 Version: 1.0
-Author: Your Name
+Author: jeepyu
 Author URI: http://your-site-if-any/
 */
 
@@ -32,7 +32,7 @@ if( !defined( 'YOURLS_ABSPATH' ) ) die();
 //     'csr_id'   => ' ADD `csr_id` varchar(255) not null default "" comment "记录唯一用户标识" ',
 // ];
 // Activation: add the column to the Log table if not added
-yourls_add_action( 'activated_more-log-info/plugin.php', .'more_log_info_activated' );
+yourls_add_action( 'activated_more-log-info/plugin.php', 'more_log_info_activated' );
 function more_log_info_activated() {
 	global $ydb; 
     
@@ -173,7 +173,7 @@ function more_log_info_statistic_where(){
         $count_column = ' COUNT(*) AS clicks ';
     }
     
-    $period = date('Y-m-d', $_REQUEST['date'] ? strtotime($_REQUEST['date']) ? time());
+    $period = date('Y-m-d', $_REQUEST['date'] ? strtotime($_REQUEST['date']) : time());
     $from   = $period . ' 00:00:00';
     $to     = $period . ' 23:59:59';
     $binds = ['from' => $from, 'to' => $to];
@@ -200,5 +200,5 @@ function more_log_info_statistic_where(){
         'count_column'  => $count_column,
         'where_string'  => $where_string,
         'binds'         => $binds,
-    ]
+    ];
 }
