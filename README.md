@@ -2,6 +2,7 @@ Title of your plugin
 ====================
 
 more-log-info Plugin for [YOURLS](http://yourls.org) `tested on version 1.7.4`. 
+
 more-log-statistic Plugin for [YOURLS](http://yourls.org) `tested on version 1.7.4`. 
 
 
@@ -17,6 +18,7 @@ Installation
 License
 -------
 Free software. Do whatever the hell you want with it.
+
 This Plugin is released under the MIT license.
 
 One more thing
