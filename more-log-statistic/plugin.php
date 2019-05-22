@@ -33,12 +33,21 @@ if( !defined( 'YOURLS_ABSPATH' ) ) die();
 yourls_add_filter( 'api_action_statistic', 'more_log_statistic' );
 function more_log_statistic() {
     $type = $_REQUEST['type'] ? : 'shorturl';
+    global $more_log_statistic_column_list ;
     if($type == 'shorturl') {
         $result = more_log_statistic_shorturl_specific_day();
     } elseif(in_array($type , $more_log_statistic_column_list)) {
-        $result = more_log_statistic_tag_specific_day($type);
+        $result = more_log_statistic_column_specific_day($type);
     } else $result = [];
-    return $result;
+
+	$return = array(
+		'statistic'   => $result,
+		'statusCode' => 200,
+		'simple'     => 'Need either XML or JSON format for stats',
+		'message'    => 'success',
+	);
+
+    return $return;
 }
 
 
@@ -99,14 +108,13 @@ function more_log_statistic_where(){
     $shorturl = $_REQUEST['shorturl'] ? : '';
     if($shorturl) {
         $binds['shorturl'] = $shorturl;
-        $where_string = ' AND shorturl= :shorturl';
+        $where_string .= ' AND shorturl= :shorturl';
     }
 
     // 历史原因增加的冗余
     if(!$_REQUEST['csr_id'] && $_REQUEST['csrId']) $_REQUEST['csr_id'] = $_REQUEST['csrId'];
 
     // 处理配置中的可参与统计的字段
-    $where_string = '';
     global $more_log_statistic_column_list ;
     foreach($more_log_statistic_column_list as $column){
         if($_REQUEST[$column]) {
