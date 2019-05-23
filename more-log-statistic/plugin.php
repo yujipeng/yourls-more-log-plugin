@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: more-log-statistic
-Plugin URI: http://github.com/your_name/your_plugin
-Description: One line description of your plugin
+Plugin URI: https://github.com/yujipeng/yourls-more-log-plugin/tree/master/more-log-statistic
+Description: 关于yourls_log表指定字段统计的插件
 Version: 1.0
 Author: jeepyu
 Author URI: http://your-site-if-any/

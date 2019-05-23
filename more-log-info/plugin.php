@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: more-log-info
-Plugin URI: http://github.com/your_name/your_plugin
-Description: One line description of your plugin
+Plugin URI: https://github.com/yujipeng/yourls-more-log-plugin/tree/master/more-log-info
+Description: 关于yourls_log表增加字段的插件
 Version: 1.0
 Author: jeepyu
 Author URI: http://your-site-if-any/
